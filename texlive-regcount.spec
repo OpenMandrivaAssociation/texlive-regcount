@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 Adds a macro \rgcount which displays the allocation status of
@@ -28,20 +25,12 @@ the TeX registers. The display is written into the .log file as
 it is a bit verbose. An automatic call to \rgcount is done at
 \begin{document} and \end{document}.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -52,7 +41,6 @@ it is a bit verbose. An automatic call to \rgcount is done at
 #- source
 %doc %{_texmfdistdir}/source/latex/regcount/regcount.dtx
 %doc %{_texmfdistdir}/source/latex/regcount/regcount.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,5 +51,3 @@ it is a bit verbose. An automatic call to \rgcount is done at
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
