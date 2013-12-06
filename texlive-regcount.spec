@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-regcount
 Version:	1.0
-Release:	5
+Release:	6
 Summary:	Display the allocation status of the TeX registers
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/regcount
