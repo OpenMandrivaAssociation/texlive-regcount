@@ -1,6 +1,6 @@
 Name:		texlive-regcount
 Version:	19979
-Release:	1
+Release:	2
 Summary:	Display the allocation status of the TeX registers
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/regcount
