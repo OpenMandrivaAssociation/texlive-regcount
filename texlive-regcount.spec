@@ -3,7 +3,7 @@ Version:	19979
 Release:	2
 Summary:	Display the allocation status of the TeX registers
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/regcount
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/regcount
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/regcount.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/regcount.doc.r%{version}.tar.xz
